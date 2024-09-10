@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://6bb4hq2onnp1"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_782jj"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="2_1ykvi"]
+
+[node name="game" type="Node"]
+script = ExtResource("1_782jj")
+
+[node name="main_menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_1ykvi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main_menu"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -64.0
+offset_right = 200.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="main_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 66
+text = "Multiplayer Template!"
+horizontal_alignment = 1
+
+[node name="host_button" type="Button" parent="main_menu/VBoxContainer"]
+layout_mode = 2
+text = "Host Game"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="main_menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="join_button" type="Button" parent="main_menu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(115.82, 0)
+layout_mode = 2
+text = "Join Server"
+
+[node name="ip_line" type="LineEdit" parent="main_menu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "localhost"
+
+[node name="quit_button" type="Button" parent="main_menu/VBoxContainer"]
+layout_mode = 2
+text = "Quit Game"
+
+[connection signal="pressed" from="main_menu/VBoxContainer/host_button" to="main_menu" method="_on_host_button_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/HBoxContainer/join_button" to="main_menu" method="_on_join_button_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/quit_button" to="main_menu" method="_on_quit_button_pressed"]

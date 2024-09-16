@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://r70a1bgj3t11"]
+
+[ext_resource type="Script" path="res://multiplayer_files/player_card_scene/player_card.gd" id="1_4q71v"]
+[ext_resource type="StyleBox" uid="uid://b6xk8gqjtbmk0" path="res://multiplayer_files/player_card_scene/styles/not_ready.tres" id="2_253i1"]
+[ext_resource type="Texture2D" uid="uid://5matduxr6k6j" path="res://assets/icon.svg" id="2_jy145"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="player_card" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.176
+anchor_right = 0.067
+anchor_bottom = 0.176
+offset_left = -77.184
+offset_top = -114.048
+offset_right = 76.816
+offset_bottom = 113.952
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_253i1")
+script = ExtResource("1_4q71v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="player_card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -108.5
+offset_right = 64.0
+offset_bottom = 108.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="player_card/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_jy145")
+
+[node name="name_label" type="Label" parent="player_card/VBoxContainer"]
+layout_mode = 2
+text = "User"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="status_label" type="Label" parent="player_card/VBoxContainer"]
+layout_mode = 2
+text = "Not Ready"
+horizontal_alignment = 1
+vertical_alignment = 2
+justification_flags = 162
+
+[node name="ready_button" type="Button" parent="player_card/VBoxContainer"]
+layout_mode = 2
+text = "Ready Up!"
+
+[connection signal="pressed" from="player_card/VBoxContainer/ready_button" to="player_card" method="_on_ready_button_pressed"]

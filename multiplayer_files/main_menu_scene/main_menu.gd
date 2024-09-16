@@ -18,7 +18,7 @@ func _on_host_button_pressed() -> void:
 	var peer = ENetMultiplayerPeer.new() 
 	peer.create_server(PORT)
 	multiplayer.multiplayer_peer = peer
-	self.hide()
+	game.remove_child(self)
 
 func _on_join_button_pressed() -> void:
 	var peer = ENetMultiplayerPeer.new() 

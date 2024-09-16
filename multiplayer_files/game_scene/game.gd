@@ -23,10 +23,10 @@ func peer_disconnected(id: int):
 # CLIENT SIGNALS
 
 func connected_to_server():
-	main_menu.hide()
+	remove_child(main_menu)
 
 func connection_failed():
 	pass
 
 func server_disconnected():
-	main_menu.show()
+	add_child(main_menu)

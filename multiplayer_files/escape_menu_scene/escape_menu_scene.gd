@@ -1,7 +1,5 @@
 extends Control
 
-var settings_menu_scene: PackedScene = preload("res://multiplayer_files/settings_menu_scene/settings_menu_scene.tscn")
-
 func _ready() -> void:
 		self.hide()
 
@@ -16,8 +14,7 @@ func _on_resume_button_pressed() -> void:
 	self.hide()
 
 func _on_settings_button_pressed() -> void:
-	var settings_menu = settings_menu_scene.instantiate()
-	get_parent().add_child(settings_menu)
+	get_tree().get_first_node_in_group("game").load_settings_menu()
 	self.hide()
 
 func _on_quit_game_button_pressed() -> void:

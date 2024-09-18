@@ -8,6 +8,7 @@ extends Control
 
 var lobby_scene: PackedScene = preload("res://multiplayer_files/lobby_scene/lobby_scene.tscn")
 var escape_menu_scene: PackedScene = preload("res://multiplayer_files/escape_menu_scene/escape_menu_scene.tscn")
+var settings_menu_scene: PackedScene = preload("res://multiplayer_files/settings_menu_scene/settings_menu_scene.tscn")
 
 var PORT = 25565
 
@@ -39,3 +40,7 @@ func _on_set_username_button_pressed() -> void:
 func load_escape_menu():
 	var escape_menu = escape_menu_scene.instantiate()
 	game.add_child(escape_menu)
+
+func _on_settings_button_pressed() -> void:
+	var settings_menu = settings_menu_scene.instantiate()
+	game.add_child(settings_menu)

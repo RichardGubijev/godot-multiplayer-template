@@ -28,8 +28,11 @@ func _process(_delta: float) -> void:
 		start_game_button.disabled = false
 
 func _on_start_game_button_pressed() -> void:
-	rpc("delete_scene")
+	multiplayer.multiplayer_peer.refuse_new_connections = true
 
-@rpc("authority", "call_local", "reliable")
-func delete_scene():
-	self.free()
+	# !!! MAKE SURE TO ADD THE SCENE YOU ARE LOADING IN TO THE MULTIPLAYERSPAWNER IN THE GAME SCENE FOUND IN "multiplayer_files\game_scene\game.tscn" !!!
+	# var game_packedScene: PackedScene = preload()
+	# var game_scene = game_packedScene.instantiate()
+	# get_parent().add_child(game_scene)
+
+	self.queue_free()

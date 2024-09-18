@@ -28,6 +28,8 @@ func _process(_delta: float) -> void:
 		start_game_button.disabled = false
 
 func _on_start_game_button_pressed() -> void:
-	queue_free()
-	# Insert loading a new scene here
+	rpc("delete_scene")
 
+@rpc("authority", "call_local", "reliable")
+func delete_scene():
+	self.free()

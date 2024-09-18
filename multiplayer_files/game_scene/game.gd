@@ -30,3 +30,15 @@ func connection_failed():
 
 func server_disconnected():
 	add_child(main_menu)
+
+# Menus
+
+func load_escape_menu():
+	var escape_menu_scene: PackedScene = preload("res://multiplayer_files/escape_menu_scene/escape_menu_scene.tscn")
+	var escape_menu = escape_menu_scene.instantiate()
+	add_child(escape_menu)
+
+func load_settings_menu():
+	var settings_menu_scene: PackedScene = preload("res://multiplayer_files/settings_menu_scene/settings_menu_scene.tscn")
+	var settings_menu = settings_menu_scene.instantiate()
+	add_child(settings_menu)

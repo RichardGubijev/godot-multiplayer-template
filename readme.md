@@ -31,4 +31,4 @@ This is a basic Godot 4 multiplayer template. It provides a foundation for multi
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
-The Godot Engine license can be found in the [godot-license.txt](godot-license) file.
+The Godot Engine license can be found in the [GODOT-LICENSE](GODOT-LICENSE) file.

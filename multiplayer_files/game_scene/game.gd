@@ -18,7 +18,7 @@ func peer_connected(id: int):
 	print("Player ", id, " connected") 
 
 func peer_disconnected(id: int):
-	print(id)
+	print("Player ", id, " disconnected") 
 
 # CLIENT SIGNALS
 

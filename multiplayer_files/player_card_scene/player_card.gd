@@ -1,5 +1,6 @@
 extends Node
 
+@onready var game: Node
 @onready var panel: Panel = $player_card
 @onready var texture_rect: TextureRect = $player_card/VBoxContainer/TextureRect
 @onready var name_label: Label = $player_card/VBoxContainer/name_label
@@ -20,6 +21,9 @@ func _enter_tree() -> void:
 func _ready():
 	if is_multiplayer_authority():
 		ready_button.disabled = false
+		ready_button.show()
+		game = get_tree().get_first_node_in_group("game")
+		name_label.text = game.username
 	update_status()
 	
 func _on_ready_button_pressed() -> void:

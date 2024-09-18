@@ -8,6 +8,9 @@
 properties/0/path = NodePath(".:ready_status")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath("player_card/VBoxContainer/name_label:text")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -63,6 +66,7 @@ vertical_alignment = 2
 justification_flags = 162
 
 [node name="ready_button" type="Button" parent="player_card/VBoxContainer"]
+visible = false
 layout_mode = 2
 disabled = true
 text = "Ready Up!"

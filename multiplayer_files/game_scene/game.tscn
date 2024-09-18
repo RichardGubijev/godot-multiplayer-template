@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://multiplayer_files/game_scene/game.gd" id="1_782jj"]
 [ext_resource type="PackedScene" uid="uid://b34ex2ejd4aa7" path="res://multiplayer_files/main_menu_scene/main_menu.tscn" id="2_y7hyw"]
 
-[node name="game" type="Node"]
+[node name="game" type="Node" groups=["game"]]
 script = ExtResource("1_782jj")
 
 [node name="main_menu" parent="." instance=ExtResource("2_y7hyw")]

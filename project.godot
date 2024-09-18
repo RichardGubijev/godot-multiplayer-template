@@ -25,6 +25,10 @@ folder_colors={
 "res://multiplayer_files/": "orange"
 }
 
+[global_group]
+
+game=""
+
 [rendering]
 
 renderer/rendering_method="mobile"

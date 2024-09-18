@@ -25,3 +25,18 @@ theme_override_constants/separation = 190
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://multiplayer_files/player_card_scene/player_card.tscn")
 spawn_path = NodePath("../HBoxContainer")
+
+[node name="start_game_button" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+disabled = true
+text = "Start Game"
+
+[connection signal="pressed" from="start_game_button" to="." method="_on_start_game_button_pressed"]

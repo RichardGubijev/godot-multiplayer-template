@@ -6,6 +6,8 @@ extends Control
 @onready var username_line: LineEdit = $VBoxContainer2/HBoxContainer2/username_line
 @onready var username_label: Label = $VBoxContainer2/HBoxContainer/username_label
 
+var lobby_scene: PackedScene = preload("res://multiplayer_files/lobby_scene/lobby_scene.tscn")
+
 var PORT = 25565
 
 func _ready() -> void:
@@ -18,7 +20,10 @@ func _on_host_button_pressed() -> void:
 	var peer = ENetMultiplayerPeer.new() 
 	peer.create_server(PORT)
 	multiplayer.multiplayer_peer = peer
+	var lobby = lobby_scene.instantiate()
+	game.add_child(lobby)
 	game.remove_child(self)
+
 
 func _on_join_button_pressed() -> void:
 	var peer = ENetMultiplayerPeer.new() 

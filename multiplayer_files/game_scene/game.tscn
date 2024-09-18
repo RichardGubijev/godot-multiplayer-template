@@ -7,3 +7,7 @@
 script = ExtResource("1_782jj")
 
 [node name="main_menu" parent="." instance=ExtResource("2_y7hyw")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://multiplayer_files/lobby_scene/lobby_scene.tscn")
+spawn_path = NodePath("..")
